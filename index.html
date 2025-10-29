@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pargasiran | Marine Services</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Vazirmatn:wght@300;400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+    <!-- Background -->
+    <div class="bg-wrapper">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="./videos/sea-patrol.mp4" type="video/mp4" />
+        </video>
+        <img src="./images/img-high.webp" alt="Sea" class="bg-fallback" />
+        <div class="overlay"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header animate__animated animate__fadeInDown">
+        <div class="container header-container">
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="fa">FA</button>
+                <button class="lang-btn active" data-lang="en">ENG</button>
+                <button class="lang-btn" data-lang="ch">CH</button>
+            </div>
+
+            <div class="logo-wrapper" style="position: relative; z-index: 30;">
+                <a href="./index.html" style="display: block;">
+                    <img src="./images/pargasiranlogo1.webp" alt="Pargasiran" class="website-logo" />
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-lang="en">Pargasiran Co.</h1>
+                <h1 class="hero-title" data-lang="fa">شرکت پرگاسیران</h1>
+                <h1 class="hero-title" data-lang="ch">帕尔加西兰公司</h1>
+
+                <p class="hero-subtitle" data-lang="en">Propulsion Systems | Navigation Equipment | Ship Engineering Tools</p>
+                <p class="hero-subtitle" data-lang="fa">سیستم‌های پیشران | تجهیزات ناوبری | ابزارهای مهندسی کشتی</p>
+                <p class="hero-subtitle" data-lang="ch">推进系统｜导航设备｜船舶工程工具</p>
+
+                <button class="cta-btn" data-lang="en">Get Started</button>
+                <button class="cta-btn" data-lang="fa">شروع همکاری</button>
+                <button class="cta-btn" data-lang="ch">开始合作</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Container - داخل جریان -->
+    <div class="wave-container">
+        <div class="wave wave-back">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#0f2a4d" fill-opacity="0.9"
+                      d="M0,192L60,186.7C120,181,240,171,360,149.3C480,128,600,96,720,101.3C840,107,960,149,1080,149.3C1200,149,1320,107,1380,85.3L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+        <div class="wave wave-front">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#17355b" fill-opacity="1"
+                      d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,144C672,139,768,181,864,197.3C960,213,1056,203,1152,181.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid">
+
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./images/img-low.jpg" alt="Product 1" />
+                    </div>
+                    <div class="product-overlay">
+                        <div class="product-content">
+                            <h3 data-lang="en">Advanced Propulsion System</h3>
+                            <h3 data-lang="fa">سیستم پیشران پیشرفته</h3>
+                            <h3 data-lang="ch">先进推进系统</h3>
+                            <p data-lang="en">High-efficiency engines for modern vessels...</p>
+                            <p data-lang="fa">موتورهای با بازدهی بالا برای کشتی‌های مدرن...</p>
+                            <p data-lang="ch">适用于现代船舶的高效发动机...</p>
+                            <a href="#" class="product-link" data-lang="en">View Project</a>
+                            <a href="#" class="product-link" data-lang="fa">مشاهده پروژه</a>
+                            <a href="#" class="product-link" data-lang="ch">查看项目</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./images/img-low.jpg" alt="Product 2" />
+                    </div>
+                    <div class="product-overlay">
+                        <div class="product-content">
+                            <h3 data-lang="en">Navigation Suite Pro</h3>
+                            <h3 data-lang="fa">سوئیت ناوبری پرو</h3>
+                            <h3 data-lang="ch">专业导航套件</h3>
+                            <p data-lang="en">Integrated GPS and radar with AI tracking...</p>
+                            <p data-lang="fa">GPS و رادار یکپارچه با ردیابی هوش مصنوعی...</p>
+                            <p data-lang="ch">集成GPS和雷达，带AI跟踪...</p>
+                            <a href="#" class="product-link" data-lang="en">View Project</a>
+                            <a href="#" class="product-link" data-lang="fa">مشاهده پروژه</a>
+                            <a href="#" class="product-link" data-lang="ch">查看项目</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./images/img-low.jpg" alt="Product 3" />
+                    </div>
+                    <div class="product-overlay">
+                        <div class="product-content">
+                            <h3 data-lang="en">Ship Engineering Toolkit</h3>
+                            <h3 data-lang="fa">جعبه‌ابزار مهندسی کشتی</h3>
+                            <h3 data-lang="ch">船舶工程工具包</h3>
+                            <p data-lang="en">Complete CAD and simulation software...</p>
+                            <p data-lang="fa">نرم‌افزار کامل CAD و شبیه‌سازی...</p>
+                            <p data-lang="ch">完整的CAD和仿真软件...</p>
+                            <a href="#" class="product-link" data-lang="en">View Project</a>
+                            <a href="#" class="product-link" data-lang="fa">مشاهده پروژه</a>
+                            <a href="#" class="product-link" data-lang="ch">查看项目</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./images/img-low.jpg" alt="Product 4" />
+                    </div>
+                    <div class="product-overlay">
+                        <div class="product-content">
+                            <h3 data-lang="en">Marine Automation Hub</h3>
+                            <h3 data-lang="fa">هاب اتوماسیون دریایی</h3>
+                            <h3 data-lang="ch">海洋自动化中心</h3>
+                            <p data-lang="en">IoT control center for smart ships...</p>
+                            <p data-lang="fa">مرکز کنترل IoT برای کشتی‌های هوشمند...</p>
+                            <p data-lang="ch">用于智能船舶的物联网控制中心...</p>
+                            <a href="#" class="product-link" data-lang="en">View Project</a>
+                            <a href="#" class="product-link" data-lang="fa">مشاهده پروژه</a>
+                            <a href="#" class="product-link" data-lang="ch">查看项目</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="./main.js"></script>
+</body>
+</html>
