@@ -22,3 +22,25 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
     });
 });
+
+// === MODAL FUNCTIONS ===
+function openModal(src) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    modalImg.src = src;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // جلوگیری از اسکرول
+}
+
+function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.remove('active');
+    setTimeout(() => {
+        document.body.style.overflow = 'auto';
+    }, 400);
+}
+
+// بستن با ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+});
