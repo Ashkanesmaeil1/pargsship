@@ -10,13 +10,18 @@ html {
 }
 
 body {
-    background: #0a1d37;
+    /* background: #0a1d37; */
+    background: linear-gradient(135deg, #021B34 0%, #062A52 50%, #0B3A69 100%);
     color: #fff;
     min-height: 100dvh;
     overflow-y: auto;     /* تغییر کرد */
     overflow-x: hidden;
     position: relative;
     transition: font-family 0.4s ease;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Default Font */
@@ -30,6 +35,25 @@ body.lang-fa { font-family: 'Vazirmatn', sans-serif; direction: rtl; text-align:
 body.lang-ch { font-family: 'Noto Sans SC', sans-serif; direction: ltr; text-align: left; }
 body.lang-en { font-family: 'Inter', sans-serif; direction: ltr; text-align: left; }
 
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #021B34; /* پس‌زمینه‌ی تیره‌ی اصلی */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #0B3A69, #05355E);
+    border-radius: 10px;
+    border: 2px solid #021B34; /* هماهنگی با پس‌زمینه */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #0C4A88, #075A97);
+}
+
 /* Container */
 .container {
     width: 90%;
@@ -38,7 +62,15 @@ body.lang-en { font-family: 'Inter', sans-serif; direction: ltr; text-align: lef
 }
 
 /* Background */
-.bg-wrapper { position: fixed; inset: 0; z-index: -1; overflow: hidden; }
+.bg-wrapper { position: fixed; 
+    inset: 0; z-index: -1; 
+    overflow: hidden; 
+    background: url(./images/background/p1.jpg); 
+    /* background: url(./images/background/p2.jpg);  */
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
 .bg-video, .bg-fallback { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
 .bg-fallback { display: none; }
 .overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,29,55,0.7), rgba(10,29,55,0.95)); }
@@ -71,15 +103,83 @@ body.lang-fa .lang-switcher { flex-direction: row-reverse; }
 }
 .hero-content { width: 100%; max-width: 80rem; margin: 0 auto; padding: 0 2rem; }
 .hero-title, .hero-subtitle, .cta-btn { display: none; opacity: 0; transition: opacity 0.4s ease; }
-.hero-title.active, .hero-subtitle.active, .cta-btn.active { display: block; opacity: 1; }
+.hero-title.active, .hero-subtitle.active { display: block; opacity: 1; }
 .hero-title { font-size: clamp(3.2rem, 6vw, 5.5rem); font-weight: 700; margin-bottom: 1.6rem; text-shadow: 0 3px 10px rgba(0,0,0,0.4); }
 .hero-subtitle { font-size: clamp(1.6rem, 3vw, 2rem); color: #e0e7ff; margin-bottom: 3rem; font-weight: 300; }
-.cta-btn { font-family: inherit !important; background: linear-gradient(135deg, #ffcc00, #ffb800); color: #0a1d37; font-weight: 700; font-size: clamp(1.6rem, 2.5vw, 1.9rem); padding: 1.4rem 3.2rem; border: none; border-radius: 5rem; cursor: pointer; box-shadow: 0 6px 20px rgba(255,204,0,0.4); transition: all 0.3s ease; display: inline-block; }
-.cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(255,204,0,0.5); }
+
+
+
+
+
+
+
+/* === CTA GROUP === */
+.cta-group {
+    display: flex;
+    gap: 1.6rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.cta-btn {
+    font-family: inherit !important;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+    padding: 1.4rem 2.8rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(255,204,0,0.4);
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.cta-btn.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    width: 25rem;
+}
+
+/* دکمه اصلی */
+.main-cta {
+    background: linear-gradient(135deg, #ffcc00, #ffb800);
+    color: #0a1d37;
+}
+
+.main-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255,204,0,0.5);
+}
+
+/* دکمه کاتالوگ */
+.catalog-cta {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #ffcc00;
+    box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+}
+
+.catalog-cta:hover {
+    background: #ffcc00;
+    color: #0a1d37;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(255,204,0,0.35);
+}
 
 /* Wave Container - داخل جریان */
 .wave-container {
     position: relative;
+    bottom: -4px;
     width: 100%;
     height: 18dvh;
     overflow: hidden;
@@ -122,17 +222,36 @@ body.lang-fa .lang-switcher { flex-direction: row-reverse; }
 .product-card:hover .product-overlay { opacity: 1; }
 .product-card:hover .product-image { filter: blur(4px) brightness(0.6); transform: scale(1.05); }
 .product-content { text-align: center; padding: 2rem; color: #fff; }
-.product-content h3, .product-content p, .product-link { display: none; opacity: 0; transition: opacity 0.4s ease; }
-.product-content h3.active, .product-content p.active, .product-link.active { display: block; opacity: 1; }
+.product-content h3, .product-content p { display: none; opacity: 0; transition: opacity 0.4s ease; }
+.product-content h3.active, .product-content p.active { display: block; opacity: 1; }
 .product-content h3 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
 .product-content p { font-size: 1.4rem; color: #e0e7ff; margin-bottom: 1.5rem; line-height: 1.6; }
 .product-link {
-    font-family: inherit !important; background: linear-gradient(135deg, #ffcc00, #ffb800);
-    color: #0a1d37; font-weight: 700; font-size: 1.4rem; padding: 1rem 2.4rem;
-    border-radius: 5rem; text-decoration: none; display: inline-block;
-    transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(255,204,0,0.3);
+    font-family: inherit !important;
+    background: linear-gradient(135deg, #ffcc00, #ffb800);
+    color: #0a1d37;
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding: 1rem 2.4rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 12px rgba(255,204,0,0.3);
 }
-.product-link:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255,204,0,0.4); }
+.product-link.active {
+    display: inline-block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.product-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,204,0,0.4);
+}
 
 /* Responsive */
 @media (max-width: 768px) {

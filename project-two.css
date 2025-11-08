@@ -25,6 +25,25 @@ body.lang-fa { font-family: 'Vazirmatn', sans-serif; direction: rtl; text-align:
 body.lang-ch { font-family: 'Noto Sans SC', sans-serif; direction: ltr; text-align: left; }
 body.lang-en { font-family: 'Inter', sans-serif; direction: ltr; text-align: left; }
 
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #021B34; /* پس‌زمینه‌ی تیره‌ی اصلی */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #0B3A69, #05355E);
+    border-radius: 10px;
+    border: 2px solid #021B34; /* هماهنگی با پس‌زمینه */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #0C4A88, #075A97);
+}
+
 /* Container */
 .container {
     width: 90%;
@@ -38,6 +57,11 @@ body.lang-en { font-family: 'Inter', sans-serif; direction: ltr; text-align: lef
     inset: 0;
     z-index: -1;
     overflow: hidden;
+    background: url(./images/project-two-img/pj2-19.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
 }
 .bg-video, .bg-fallback {
     width: 100%;
@@ -118,15 +142,31 @@ body.lang-fa .lang-switcher { flex-direction: row-reverse; }
     gap: 5rem;
     align-items: center;
 }
+.product-main-image {
+    width: 100%;
+    max-width: 600px; /* اندازه دلخواه باکس */
+    aspect-ratio: 16 / 9; /* یا هر نسبت دلخواه مثل 4 / 3 */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 2rem;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .product-main-image img {
     width: 100%;
-    height: auto;
-    border-radius: 2rem;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    transition: transform 0.4s ease;
+    height: 100%;
+    object-fit: cover; /* پر کردن باکس بدون کشیدگی */
+    object-position: center; /* تمرکز روی وسط عکس */
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
 }
-.product-main-image img:hover {
+/* .product-main-image img:hover {
     transform: scale(1.02);
+} */
+.product-main-image img.fade-out {
+    opacity: 0;
 }
 
 .product-title, .product-desc, .feature-item, .back-btn {
