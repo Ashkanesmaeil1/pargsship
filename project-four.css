@@ -153,6 +153,8 @@ body.lang-fa .lang-switcher { flex-direction: row-reverse; }
     display: flex;
     justify-content: center;
     align-items: center;
+
+    display: none; /* tst */
 }
 .product-main-image img {
     width: 100%;

@@ -77,7 +77,7 @@ const mainImage = document.querySelector('.product-main-image img');
   const bgWrapper = document.querySelector('.bg-wrapper');
 
   let currentIndex = 0;
-  const intervalTime = 8000;
+  const intervalTime = 5000;
 
   function changeImage() {
     mainImage.classList.add('fade-out');
