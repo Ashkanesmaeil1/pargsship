@@ -105,11 +105,11 @@ body.lang-fa .lang-switcher { flex-direction: row-reverse; }
     transform: translate(-50%, -50%);
     filter: blur(40px);
     z-index: 1;
-    animation: pulseGlow 3s ease-in-out infinite;
+    /* animation: pulseGlow 3s ease-in-out infinite; */
 }
   
 /* انیمیشن ملایم برای درخشش */
-@keyframes pulseGlow {
+/* @keyframes pulseGlow {
   0%, 100% {
     opacity: 0.8;
     transform: translate(-50%, -50%) scale(1);
@@ -118,12 +118,12 @@ body.lang-fa .lang-switcher { flex-direction: row-reverse; }
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.1);
   }
-}
+} */
 
 /* Hero */
 .hero {
     position: relative;
-    padding: 10rem 0 22dvh;  /* فضای کافی برای موج */
+    padding: 10rem 0 22dvh;
     text-align: center;
     z-index: 10;
     top: 150px;
