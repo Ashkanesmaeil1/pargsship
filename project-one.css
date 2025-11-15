@@ -45,7 +45,7 @@ body.lang-en { font-family: 'Inter', sans-serif; direction: ltr; text-align: lef
     inset: 0;
     z-index: -1;
     overflow: hidden;
-    background: url(./images/project-one-img/pj1-33.webp);
+    background: url(./images/project-one-img/pj1-01.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -76,7 +76,6 @@ body.lang-en { font-family: 'Inter', sans-serif; direction: ltr; text-align: lef
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     gap: 2rem;
 }
 .lang-switcher {

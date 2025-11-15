@@ -65,7 +65,7 @@ body.lang-en { font-family: 'Inter', sans-serif; direction: ltr; text-align: lef
     padding: 2rem 0;
     z-index: 20;
 }
-.header-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+.header-container { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
 .lang-switcher { display: flex; gap: 0.8rem; order: 2; z-index: 999; }
 body.lang-fa .lang-switcher { flex-direction: row-reverse; }
 .lang-btn { background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.3); color: #fff; font-weight: 600; font-size: 1.3rem; padding: 1rem 1.8rem; border-radius: 2rem; cursor: pointer; transition: all 0.3s ease;}
