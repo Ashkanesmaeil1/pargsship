@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  # 1. سرویس وب سایت شما (پروژه استاتیک)
+  web:
+    container_name: pargasship-website
+    build: . # Docker Compose ایمیج را از Dockerfile می سازد
+    restart: always # همیشه کانتینر را در صورت خطا دوباره اجرا کن
+    # نیازی به مپ کردن پورت به بیرون نیست، چون فقط Reverse Proxy باید به آن دسترسی داشته باشد.
+
+  # 2. سرویس دیتابیس برای Nginx Proxy Manager
+  db:
+    image: mariadb:10.6
+    container_name: proxy-db
+    restart: always
+    environment:
+      # نام دیتابیس را به دلخواه تغییر دهید
+      MYSQL_DATABASE: 'npm'
+      # پسورد و نام کاربری برای دیتابیس (مهم: این مقادیر را امن و قوی انتخاب کنید)
+      MYSQL_USER: 'npmuser'
+      MYSQL_PASSWORD: 'secure_password'
+      MYSQL_ROOT_PASSWORD: 'root_secure_password'
+    volumes:
+      - ./data/mysql:/var/lib/mysql # ذخیره اطلاعات دیتابیس در هاست
+    
+  # 3. سرویس Nginx Proxy Manager (Reverse Proxy)
+  proxy:
+    image: jc21/nginx-proxy-manager:latest
+    container_name: nginx-proxy-manager
+    restart: always
+    ports:
+      # پورت‌های اصلی برای دسترسی خارجی
+      - '80:80' # HTTP
+      - '443:443' # HTTPS
+      - '81:81' # پورت دسترسی به رابط کاربری گرافیکی NPM
+    environment:
+      DB_MYSQL_HOST: db
+      DB_MYSQL_PORT: 3306
+      DB_MYSQL_DATABASE: npm
+      DB_MYSQL_USER: npmuser
+      DB_MYSQL_PASSWORD: secure_password
+    volumes:
+      - ./data/npm:/data # ذخیره تنظیمات و گواهی‌های SSL
+    depends_on:
+      - db
+      - web # مطمئن شو که وب سایت قبل از پراکسی آماده شده است
